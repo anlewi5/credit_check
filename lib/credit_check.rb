@@ -2,16 +2,19 @@
 
 class CardChecker
 
-  attr_reader :card_number
+  #attr_reader :card_number
 
   def initialize(card_number)
     @card_number = card_number
   end
 
-  #Returns an array of strings representing digits in reverse order
+#Returns an array of strings representing digits in reverse order
   def reverse_card_number
     @reversed_card = @card_number.to_s.reverse.each_char.to_a
   end
+
+#.divmod(10)
+# -=9 is same as adding the 2 digits together
 
   def convert_digit(digit)
     if digit.to_i >= 10
@@ -24,6 +27,7 @@ class CardChecker
   end
 
   #Returns string array with odd indices doubled
+  #.zero?
   def make_doubles
       @doubled_card =
         @reversed_card.map.with_index do |digit, index|
