@@ -2,15 +2,13 @@
 
 class CardChecker
 
-  #attr_reader :card_number
-
   def initialize(card_number)
     @card_number = card_number
   end
 
-#Returns an array of strings representing digits in reverse order
+  #Returns an array of strings representing digits in reverse order
   def reverse_card_number
-    @reversed_card = @card_number.to_s.reverse.each_char.to_a
+    @reversed_card = @card_number.reverse.chars
   end
 
   def convert_digit(digit)
@@ -60,6 +58,7 @@ class CardChecker
   end
 end
 
-# notes for potential improvement:
+#notes for potential improvement:
 #for convert_digit method: .divmod(10), -=9 is same as adding the 2 digits together
-#for check_sum method: .zero?
+#for check_sum method: .zero?, inject or reduce methods
+#reduce the number is
