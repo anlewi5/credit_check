@@ -13,9 +13,6 @@ class CardChecker
     @reversed_card = @card_number.to_s.reverse.each_char.to_a
   end
 
-#.divmod(10)
-# -=9 is same as adding the 2 digits together
-
   def convert_digit(digit)
     if digit.to_i >= 10
       digit = digit[0].to_i + digit[1].to_i
@@ -27,7 +24,6 @@ class CardChecker
   end
 
   #Returns string array with odd indices doubled
-  #.zero?
   def make_doubles
       @doubled_card =
         @reversed_card.map.with_index do |digit, index|
@@ -63,3 +59,7 @@ class CardChecker
     check_sum
   end
 end
+
+# notes for potential improvement:
+#for convert_digit method: .divmod(10), -=9 is same as adding the 2 digits together
+#for check_sum method: .zero?

@@ -44,4 +44,13 @@ class CardCheckerTest < Minitest::Test
     card_number = CardChecker.new("6011797668868728")
     assert_equal "The number is invalid!", card_number.check_card
   end
+
+  def test_amx_card_number
+    card_number = CardChecker.new("342804633855673")
+    assert_equal "The number is valid!", card_number.check_card
+
+    card_number = CardChecker.new("342801633855673")
+    assert_equal "The number is invalid!", card_number.check_card
+  end
+
 end
